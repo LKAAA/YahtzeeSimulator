@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://clhl7jrt7pxc3"]
+
+[ext_resource type="Script" uid="uid://c0hw52r10l5bo" path="res://Objects/die.gd" id="1_75ub2"]
+[ext_resource type="Material" uid="uid://cti75g272c1ls" path="res://Materials/M_Die.tres" id="1_q3q1q"]
+[ext_resource type="Texture2D" uid="uid://d3if16gaue10h" path="res://Assets/Models/die.png" id="2_75ub2"]
+[ext_resource type="ArrayMesh" uid="uid://c02mtaanc8r4c" path="res://Assets/Models/Die.obj" id="3_tv87w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwycr"]
+albedo_texture = ExtResource("2_75ub2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apbrc"]
+
+[node name="Die" type="RigidBody3D"]
+script = ExtResource("1_75ub2")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("1_q3q1q")
+material_overlay = SubResource("StandardMaterial3D_rwycr")
+mesh = ExtResource("3_tv87w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_apbrc")

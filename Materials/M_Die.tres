@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cti75g272c1ls"]
+
+[ext_resource type="Texture2D" uid="uid://d3if16gaue10h" path="res://Assets/Models/die.png" id="1_70hbt"]
+
+[resource]
+disable_ambient_light = true
+albedo_texture = ExtResource("1_70hbt")
+texture_filter = 0
+texture_repeat = false

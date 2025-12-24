@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=3 uid="uid://w80span4dmr4"]
+
+[ext_resource type="Script" uid="uid://bbwbwyqo0upnt" path="res://core.gd" id="1_qhobl"]
+[ext_resource type="PackedScene" uid="uid://dawkhgiihij8u" path="res://Objects/cube.tscn" id="2_tvpqx"]
+[ext_resource type="PackedScene" uid="uid://clhl7jrt7pxc3" path="res://Objects/die.tscn" id="3_05t4c"]
+[ext_resource type="Script" uid="uid://orvnhv5n2cuj" path="res://yahtzee_checker.gd" id="4_l5qv6"]
+
+[node name="Core" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(426, 240)
+render_target_update_mode = 4
+
+[node name="Game" type="Node3D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+script = ExtResource("1_qhobl")
+
+[node name="RollArea" type="Node3D" parent="SubViewportContainer/SubViewport/Game"]
+
+[node name="Cube" parent="SubViewportContainer/SubViewport/Game/RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(18, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Cube6" parent="SubViewportContainer/SubViewport/Game/RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(18, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 13.93075, 0)
+
+[node name="Cube2" parent="SubViewportContainer/SubViewport/Game/RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(18, 0, 0, 0, -8.742279e-09, -14.905575, 0, 0.20000003, -6.5154336e-07, 0, 6.690221, -5)
+
+[node name="Cube3" parent="SubViewportContainer/SubViewport/Game/RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(18, 0, 0, 0, -8.742279e-09, -14.905575, 0, 0.20000003, -6.5154336e-07, 0, 6.690221, 5)
+
+[node name="Cube4" parent="SubViewportContainer/SubViewport/Game/RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(-4.371139e-07, 0.20000003, -6.5154336e-07, 0, -8.742279e-09, -14.905575, -10, -8.742279e-09, 2.8479867e-14, 9, 6.690221, 0)
+
+[node name="Cube5" parent="SubViewportContainer/SubViewport/Game/RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(-4.371139e-07, 0.20000003, -6.5154336e-07, 0, -8.742279e-09, -14.905575, -10, -8.742279e-09, 2.8479867e-14, -9, 6.690221, 0)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Game"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.915626, 0)
+
+[node name="DieObject" parent="SubViewportContainer/SubViewport/Game" instance=ExtResource("3_05t4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+
+[node name="DieObject2" parent="SubViewportContainer/SubViewport/Game" instance=ExtResource("3_05t4c")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 2.624, 1, 0)
+
+[node name="DieObject3" parent="SubViewportContainer/SubViewport/Game" instance=ExtResource("3_05t4c")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, 0)
+
+[node name="DieObject4" parent="SubViewportContainer/SubViewport/Game" instance=ExtResource("3_05t4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, 0)
+
+[node name="DieObject5" parent="SubViewportContainer/SubViewport/Game" instance=ExtResource("3_05t4c")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -5, 1, 0)
+
+[node name="Spawn1" type="Node3D" parent="SubViewportContainer/SubViewport/Game" groups=["Spawnpoint"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
+
+[node name="Spawn2" type="Node3D" parent="SubViewportContainer/SubViewport/Game" groups=["Spawnpoint"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, 0)
+
+[node name="Spawn3" type="Node3D" parent="SubViewportContainer/SubViewport/Game" groups=["Spawnpoint"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Spawn4" type="Node3D" parent="SubViewportContainer/SubViewport/Game" groups=["Spawnpoint"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2, 0)
+
+[node name="Spawn5" type="Node3D" parent="SubViewportContainer/SubViewport/Game" groups=["Spawnpoint"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0)
+
+[node name="YahtzeeChecker" type="Node3D" parent="SubViewportContainer/SubViewport/Game"]
+unique_name_in_owner = true
+script = ExtResource("4_l5qv6")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19475746, 3.814271, 0.018015862)
+light_energy = 4.048
+light_size = 1.0
+omni_range = 7.122465
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4387774, 3.814271, 0.018015862)
+light_energy = 4.048
+light_size = 1.0
+omni_range = 6.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.208797, 3.814271, 0.018015862)
+light_energy = 4.048
+light_size = 1.0
+omni_range = 6.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Game"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 8, -12)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextLabel" type="RichTextLabel" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

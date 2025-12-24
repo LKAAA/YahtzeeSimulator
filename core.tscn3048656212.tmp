@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://w80span4dmr4"]
+
+[ext_resource type="Script" uid="uid://bbwbwyqo0upnt" path="res://core.gd" id="1_qhobl"]
+[ext_resource type="PackedScene" uid="uid://dawkhgiihij8u" path="res://Scenes/Objects/cube.tscn" id="2_tvpqx"]
+[ext_resource type="PackedScene" uid="uid://clhl7jrt7pxc3" path="res://Scenes/Objects/die_object.tscn" id="3_05t4c"]
+
+[node name="Core" type="Node3D"]
+script = ExtResource("1_qhobl")
+
+[node name="RollArea" type="Node3D" parent="."]
+
+[node name="Cube" parent="RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Cube2" parent="RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(10, 0, 0, 0, -8.742278e-09, -6, 0, 0.2, -2.6226832e-07, 0, 3, -5)
+
+[node name="Cube3" parent="RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(10, 0, 0, 0, -8.742278e-09, -6, 0, 0.2, -2.6226832e-07, 0, 3, 5)
+
+[node name="Cube4" parent="RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(-4.371139e-07, 0.2, -2.6226832e-07, 0, -8.742278e-09, -6, -10, -8.742278e-09, 1.1464113e-14, 5, 3, 0)
+
+[node name="Cube5" parent="RollArea" instance=ExtResource("2_tvpqx")]
+transform = Transform3D(-4.371139e-07, 0.2, -2.6226832e-07, 0, -8.742278e-09, -6, -10, -8.742278e-09, 1.1464113e-14, -5, 3, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.915626, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9787316, -0.1860878, 0.08634752, 0, 0.42090923, 0.90710276, -0.20514522, -0.8878101, 0.41195714, 0, 4.1005363, 0)
+
+[node name="DieObject" parent="." instance=ExtResource("3_05t4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6602868, 0.6, 2.279964)
+
+[node name="DieObject2" parent="." instance=ExtResource("3_05t4c")]
+transform = Transform3D(1, 0, 0, 0, -0.99995977, 0.008970768, 0, -0.008970768, -0.99995977, -1.8280393, 0.6, -1.2159301)
+
+[node name="DieObject3" parent="." instance=ExtResource("3_05t4c")]
+transform = Transform3D(1, 0, 0, 0, -0.005009078, -0.9999875, 0, 0.9999875, -0.005009078, 0.8901292, 0.6, 0.4427522)
+
+[node name="DieObject4" parent="." instance=ExtResource("3_05t4c")]
+transform = Transform3D(0.07621432, 0.9970915, 0, -0.9970915, 0.07621432, 0, 0, 0, 1, 1.2177038, 0.6, -2.3330536)
+
+[node name="DieObject5" parent="." instance=ExtResource("3_05t4c")]
+transform = Transform3D(-0.015532747, -0.99987936, 0, 0.99987936, -0.015532747, 0, 0, 0, 1, 2.60772, 0.6, 2.7434297)
